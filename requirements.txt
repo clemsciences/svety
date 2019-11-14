@@ -1,4 +1,2 @@
-cltk
-nltk
 lxml
 requests
