@@ -33,5 +33,5 @@ class TestMain(unittest.TestCase):
 
     def test_lookup_word(self):
         root = reader.get_xml_root(self.filename, self.path)
-        a = reader.read_entry(root, "")
-        print(a[0])
+        word = reader.read_entry(root, "enkom")
+        self.assertEqual(word["faksimilID"], '0208')

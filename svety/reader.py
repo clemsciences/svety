@@ -22,15 +22,15 @@ def get_xml_root(filename, path=""):
     return root
 
 
-def read_entry(root, word):
+def get_entries(root):
+    entries = [{feat.get("att"): feat.get("val") for feat in entry.findall(".//feat")}
+               for entry in root.findall('.//LexicalEntry')]
+    return entries
 
-    lexical_entries = root.findall('.//LexicalEntry')
-    [{feat.get("att"): feat.get("val") for feat in entry.findall("feat")}  for entry in lexical_entries]
-    print(lexical_entries[0].find("Lemma"))
-    print(lexical_entries[0].find("Lemma").getchildren())
-    # print(lexical_entries[0].getchildren().get("Lemma"))
-    # print(lexical_entries[0].get("Lemma").get("FormRepresentation"))
-    print(lexical_entries[0].find("Sense"))
-    print(lexical_entries[0].find("Sense").getchildren())
-    # print(lexical_entries[0])
-    return lexical_entries
+
+def read_entry(root, word):
+    entries = get_entries(root)
+    for entry in entries:
+        if "writtenForm" in entry and entry["writtenForm"] == word:
+            return entry
+    return None
