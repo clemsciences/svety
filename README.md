@@ -1,6 +1,4 @@
-# Reader of the *Hellquists Svensk etymologisk ordbok
-
-[![PyPI](https://img.shields.io/pypi/v/norsecorpus)](https://pypi.org/project/norsecorpus/) [![Build Status](https://travis-ci.org/clemsciences/old_norse_corpus.svg?branch=master)](https://travis-ci.org/clemsciences/old_norse_corpus) ![PyPI - License](https://img.shields.io/pypi/l/norsecorpus) 
+# Reader of the *Hellquists Svensk etymologisk ordbok* 
 
 This package provides a etymological dictionary of Swedish.
 
@@ -18,6 +16,9 @@ $ pip install svety
 ## How to use **svety**
 
 ```python
-import svety.reader
+from svety import reader, retriever
+retriever.retrieve_dictionary()
+root = reader.get_xml_root("hellqvist.xml")
+word = reader.read_entry(root, "enkom")
 ```
-
+And you got the "enkom" entry.
