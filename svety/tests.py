@@ -20,12 +20,12 @@ class TestMain(unittest.TestCase):
     """
     def setUp(self) -> None:
         self.filename = "hellqvist.xml"
-        self.path = PACKDIR
+        self.path = os.getcwd()
 
     def test_retrieve_text(self):
         result = retriever.retrieve_dictionary()
         self.assertTrue(result)
-        self.assertIn(self.filename, os.listdir(os.getcwd()))
+        self.assertIn(self.filename, os.listdir(self.path))
 
     def test_root(self):
         root = reader.get_xml_root(self.filename, self.path)
