@@ -9,14 +9,12 @@
 # python-m twine upload dist/*  # 'twine' must be installed: 'pip install twine'
 
 
-import ast
 import io
-import re
 import os
 from setuptools import find_packages, setup
 
-DEPENDENCIES = ["nltk", "lxml", "requests"]
-EXCLUDE_FROM_PACKAGES = ["contrib", "docs", "tests*"]
+DEPENDENCIES = ["lxml", "requests"]
+EXCLUDE_FROM_PACKAGES = []
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 
 with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
