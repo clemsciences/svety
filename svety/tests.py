@@ -21,6 +21,7 @@ class TestMain(unittest.TestCase):
     def setUp(self) -> None:
         self.filename = "hellqvist.xml"
         self.path = os.getcwd()
+        retriever.retrieve_dictionary()
 
     def test_retrieve_text(self):
         result = retriever.retrieve_dictionary()
