@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/clemsciences/svety.svg?branch=master)](https://travis-ci.org/clemsciences/svety) [![PyPI](https://img.shields.io/pypi/v/svety)](https://pypi.org/project/svety/)
+
+
 # Reader of the *Hellquists Svensk etymologisk ordbok* 
 
 This package provides a etymological dictionary of Swedish.
